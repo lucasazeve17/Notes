@@ -1,0 +1,46 @@
+{% extends "layout.njk" %}
+{% block head %}
+    <title>Notes</title>
+{% endblock %}
+
+{% block header %}
+    <header>
+        <div class="top">
+            <h1>Notes</h1>
+            <ul>
+                <li>
+                    <a href="/notes/create" class="buttons">Add note</a>
+                </li>
+                <li><img src="/./assets/settings.svg" alt="settings"></li>
+
+            </ul>
+        </div>
+        <input type="text" placeholder="Search" class="search">
+
+    </header>
+    {% endblock%}
+    {% block content%}
+
+        <section class="container-content">
+            <ul>
+                {% for note in notes %}
+                    <li>
+                        {{note.title}}
+                        <div>
+                            <span class="buttons">
+                                <a href="/notes/{{note.id}}/edit">Ver</a>
+                            </span>
+                           
+                            <form class="fro" action="/notes?_method=DELETE" method="POST">
+                            <input type="hidden" name="id" value="{{note.id}}">
+                           
+                            <span><button type="submit" class="buttons">Excluir</button></span>
+                            
+                            </form>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        {% endblock%}

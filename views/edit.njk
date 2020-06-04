@@ -1,0 +1,25 @@
+{% extends "layout.njk" %}
+{% block head %}
+    <title>Notes - new</title>
+{% endblock %}
+
+{% block header %}
+    <header>
+        <div class="top">
+            <h1>New Note</h1>
+            <img src="/./assets/settings.svg" alt="settings">
+
+        </div>
+        <input type="text" placeholder="Search" class="search">
+    </header>
+    {% endblock%}
+    {% block content%}
+
+        <section class="container-main">
+            <form action="/notes?_method=PUT" method="post">
+                {%include "fields.njk"%}
+                <input type="hidden" value="{{note.id}}" name="id"/>
+            </form>
+        </section>
+
+        {% endblock%}

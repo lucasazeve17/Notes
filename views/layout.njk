@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/style.css">
+
+        {% block head %}
+
+            {% endblock%}
+        </head>
+        <body>
+            <div class="container">
+                {% block header %}{% endblock %}
+                <img src="/./assets/menu.svg" alt="menu" class="menu-hamburguer a">
+                <aside>
+                    <div class="menu">
+                        <ul>
+                            <li>
+                                <a href="/notes"><img src="/./assets/home.svg" alt="Home"></a>
+                            </li>
+                            <li><img src="/./assets/info.svg" alt="info"></li>
+                        </ul>
+
+                    </div>
+                </aside>
+                <main>
+                    {% block content %}{% endblock %}
+                </main>
+            </div>
+
+            <script src="/script.js"></script>
+        </body>
+    </html>
