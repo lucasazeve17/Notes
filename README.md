@@ -6,7 +6,7 @@
 - **Node.js**
 - **Express**
 - **CSS3**
--**Nunjucks**
+- **Nunjucks**
 
 
 ## Inciar o projeto
